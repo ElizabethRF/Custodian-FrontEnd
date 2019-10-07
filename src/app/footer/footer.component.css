@@ -1,0 +1,17 @@
+#footer {
+  background-color: #eff0f1;
+  height: 16%;
+}
+#logo-footer {
+  width: 15%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.menu,
+#help {
+  font-size: 0.75em;
+  margin-left: 5%;
+}
+#help {
+  margin-left: 20%;
+}

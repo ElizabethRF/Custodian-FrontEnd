@@ -4,22 +4,25 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './login/login.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
+import { ListsComponent } from './lists/lists.component';
+import { LoginComponent } from './login/login.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent,
+    ListsComponent,
     LoginComponent,
     NavBarComponent,
-    FooterComponent
+    NotificationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { MatCardModule } from '@angular/material/card';
     MatToolbarModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
