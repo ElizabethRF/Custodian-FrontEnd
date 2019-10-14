@@ -14,6 +14,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { AddProfileComponent } from './add-profile/add-profile.component';
+import { MatTableModule } from '@angular/material' ; 
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
     LoginComponent,
     NavBarComponent,
     NotificationsComponent,
+    AddProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
     MatInputModule,
     MatButtonModule,
     MatCardModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
