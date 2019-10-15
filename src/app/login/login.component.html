@@ -1,30 +1,30 @@
 <div class="login">
-<mat-card class="login-card">
-  <mat-card-header id="title-login">
-    <mat-card-title>
-      <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png" alt="logo" id="logo-login"/>
-      <h3>Custodian</h3>
-    </mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <form class="form-login">
-      <mat-form-field class="input-login">
-        <input matInput placeholder="Email" type="email">
-      </mat-form-field>
-      <mat-form-field class="input-login">
-        <input matInput placeholder="Password" type="password">
-      </mat-form-field>
-      <a mat-raised-button routerLink="." color="accent">Login</a>
-    </form>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>Report a problem</button>
-  </mat-card-actions>
-</mat-card>
-<div class="video-container">
-<video autoplay loop muted>
-    <source src="../assets/video/cctv.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-</div>
+  <mat-card class="login-card">
+    <mat-card-header id="title-login">
+      <mat-card-title>
+        <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png" alt="logo" id="logo-login"/>
+        <h3>Custodian</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="form-login" [formGroup]="loginForm"  (ngSubmit)="onSubmit()">
+        <mat-form-field class="input-login">
+          <input matInput placeholder="Email" type="email" formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="input-login">
+          <input matInput placeholder="Password" type="password" formControlName="password">
+        </mat-form-field>
+        <button mat-raised-button routerLink="." color="accent" type="submit">Login</button>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Report a problem</button>
+    </mat-card-actions>
+  </mat-card>
+  <div class="video-container">
+    <video autoplay loop muted>
+        <source src="../assets/video/cctv.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  </div>
 </div>

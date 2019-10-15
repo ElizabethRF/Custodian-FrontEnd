@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,7 +14,14 @@ import { MatCardModule } from '@angular/material/card';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { AddProfileComponent } from './add-profile/add-profile.component';
-import { MatTableModule } from '@angular/material' ; 
+import { MatTableModule } from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
+const appRoutes = [
+  { path: '', component: LoginComponent },
+  { path: 'notifications', component: NotificationsComponent }
+];
 
 @NgModule({
   declarations: [
@@ -37,6 +43,10 @@ import { MatTableModule } from '@angular/material' ;
     MatButtonModule,
     MatCardModule,
     MatTableModule,
+    RouterModule.forRoot(
+      appRoutes
+    ),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
