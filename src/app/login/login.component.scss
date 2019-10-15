@@ -1,0 +1,49 @@
+.login {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.login-card {
+    position: absolute;
+    width: 40%;
+    top: 15%;
+    margin-left: 30%;
+    background-color: beige;
+    text-align: center;
+    z-index: 1;
+}
+
+#title-login {
+    margin-left: 0%;
+}
+
+#logo-login {
+    width: 20%;
+}
+
+.input-login {
+    display: block;
+    margin-left: 20%;
+    width: 60%;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: hidden;
+}
+
+.video-container video {
+    min-width: 100%; 
+    min-height: 100%; 
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
