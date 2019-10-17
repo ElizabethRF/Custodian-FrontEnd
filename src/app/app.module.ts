@@ -17,6 +17,8 @@ import { AddProfileComponent } from './add-profile/add-profile.component';
 import { MatTableModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { MatPaginatorModule } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material';
 
 const appRoutes = [
   { path: '', component: LoginComponent },
@@ -43,6 +45,8 @@ const appRoutes = [
     MatButtonModule,
     MatCardModule,
     MatTableModule,
+    MatPaginatorModule,
+    MatCheckboxModule,
     RouterModule.forRoot(
       appRoutes
     ),

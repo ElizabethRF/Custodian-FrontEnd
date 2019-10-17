@@ -1,6 +1,6 @@
 <h1 class="mat-display-1">Registro de alertas</h1>
-
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -51,6 +51,8 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" 
       [ngClass]="
         {'greenRow': row.list == 'Black List' && row.attended, 'redRow': row.list == 'Black List' && !row.attended  }"></tr>
+   
   </table>
   
-  
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
