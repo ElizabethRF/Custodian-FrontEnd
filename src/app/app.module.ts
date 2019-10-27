@@ -20,7 +20,9 @@ import { RouterModule } from '@angular/router';
 
 const appRoutes = [
   { path: '', component: LoginComponent },
-  { path: 'notifications', component: NotificationsComponent }
+  { path: 'notifications', component: NotificationsComponent },
+  { path: 'lists', component: ListsComponent },
+  { path: 'people', component: AddProfileComponent}
 ];
 
 @NgModule({
