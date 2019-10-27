@@ -1,1 +1,29 @@
-<p>notifications works!</p>
+<app-nav-bar></app-nav-bar>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Date</th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+      </ng-container>
+    <ng-container matColumnDef="hour">
+      <th mat-header-cell *matHeaderCellDef>Time</th>
+      <td mat-cell *matCellDef="let element"> {{element.hour}} </td>
+    </ng-container>
+    <ng-container matColumnDef="personId">
+      <th mat-header-cell *matHeaderCellDef>ID (if known)</th>
+      <td mat-cell *matCellDef="let element"> {{element.personId}} </td>
+    </ng-container>
+    <ng-container matColumnDef="comment">
+        <th mat-header-cell *matHeaderCellDef>More information</th>
+        <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+      </ng-container>
+    <ng-container matColumnDef="handled">
+        <th mat-header-cell *matHeaderCellDef>Handled?</th>
+        <td mat-cell *matCellDef="let element"> {{element.handled}} </td>
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" 
+      [ngClass]="
+        {'greenRow': row.list == 'Black List' && row.handled, 'redRow': row.list == 'Black List' && !row.attended  }"></tr>
+  </table>
+  
+  

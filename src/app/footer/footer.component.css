@@ -6,8 +6,8 @@
   height: 16%;
 }
 #logo-footer {
-  width: 15%;
-  margin-left: 2%;
+  width: 6%;
+  margin-left: 5%;
   margin-right: 2%;
 }
 .menu,
@@ -16,5 +16,8 @@
   margin-left: 5%;
 }
 #help {
-  margin-left: 20%;
+  margin-left: 0.5%;
+}
+#help-footer {
+  margin-left: 30%;
 }

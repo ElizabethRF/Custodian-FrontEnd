@@ -1,0 +1,10 @@
+table {
+  width: 70%;
+  position: absolute;
+}
+.redRow {
+  background-color: red;
+}
+.greenRow {
+  background-color: greenyellow;
+}

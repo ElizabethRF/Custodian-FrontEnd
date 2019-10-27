@@ -1,6 +1,7 @@
 body {
     position: relative;
     min-height: 100vh;
+    caret-color:black;
 }
 
 a {
@@ -10,4 +11,8 @@ a {
 
 a:hover {
     color: black;
+}
+
+h3 {
+    color: #4e5d73;;
 }
