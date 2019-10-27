@@ -47,6 +47,3 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.mat-form-field-underline {
-  background-color: #b18c51 !important;
-}
