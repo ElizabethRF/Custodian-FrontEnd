@@ -1,0 +1,15 @@
+#people-comp {
+  width: 100%;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  display: block;
+  position: relative;
+  z-index: -1;
+}
+#people-comp table {
+  margin-left: 10%;
+  width: 80%;
+}
+#footer {
+  position: relative;
+}

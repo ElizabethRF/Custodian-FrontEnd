@@ -7,14 +7,14 @@ import { FooterComponent } from './footer/footer.component';
 import { ListsComponent } from './lists/lists.component';
 import { LoginComponent } from './login/login.component';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatTableModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NotificationsComponent } from './notifications/notifications.component';
-import { AddProfileComponent } from './add-profile/add-profile.component';
-import { MatTableModule } from '@angular/material';
+import { PeopleComponent } from './people/people.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
@@ -22,7 +22,7 @@ const appRoutes = [
   { path: '', component: LoginComponent },
   { path: 'notifications', component: NotificationsComponent },
   { path: 'lists', component: ListsComponent },
-  { path: 'people', component: AddProfileComponent}
+  { path: 'people', component: PeopleComponent}
 ];
 
 @NgModule({
@@ -33,7 +33,7 @@ const appRoutes = [
     LoginComponent,
     NavBarComponent,
     NotificationsComponent,
-    AddProfileComponent,
+    PeopleComponent,
   ],
   imports: [
     BrowserModule,
