@@ -1,36 +1,40 @@
-
 <app-nav-bar></app-nav-bar>
 <div id="people-comp">
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 people-table">
-
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-  
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  <mat-form-field class="filter">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    <mat-icon id="help-footer" matSuffix>filter_list</mat-icon>
+  </mat-form-field>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+    <ng-container matColumnDef="avatar">
+      <th mat-header-cell *matHeaderCellDef> Picture </th>
+      <td class="avatar" mat-cell *matCellDef="let element">
+          <img src="https://cdn.orvis.com/images/DBS_ShibaInu_1280.jpg" alt="avatar">
+      </td>
     </ng-container>
-  
-    <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
       <td mat-cell *matCellDef="let element"> {{element.name}} </td>
     </ng-container>
-  
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
     </ng-container>
-  
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef> Phone number </th>
+      <td mat-cell *matCellDef="let element"> 
+        <p class="phone">{{element.phone}}</p>
+        <div class="more">
+          <button mat-icon-button>
+            <mat-icon class="edit">edit</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon class="delete">delete_outline</mat-icon>
+          </button>
+        </div>
+      </td>
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+  </table> 
 </div>

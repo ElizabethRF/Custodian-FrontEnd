@@ -1,17 +1,68 @@
 #people-comp {
     width: 100%;
-    padding-top: 2%;
-    padding-bottom: 3%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    min-block-size: 70%;
     display: block;
     position: relative;
-    z-index: -1;
+    z-index: 1;
 }
 
 #people-comp table {
-    margin-left: 10%;
+    margin-left: 8%;
     width: 80%;
 }
 
-#footer {
-    position: relative;
+.filter {
+    left: 70%;
+    margin-top: 0.3%;
+    width: 20%;
+}
+
+.avatar {
+    width: 15%;
+}
+
+.avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.phone {
+    display: inline;
+}
+
+.more {
+    display: inline;
+    visibility: hidden;
+    margin-left: 55%;
+}
+
+.delete {
+    margin-left: 6%;
+}
+
+th {
+    font-size: 1.4em;
+}
+
+td {
+    font-size: 1.1em;
+}
+
+td:hover .more {
+    visibility: visible;
+}
+
+tr:hover {
+    background-color: #ecf4f9;
+}
+
+.mat-column-name {
+    min-width: 150px;
+}
+
+.mat-column-email {
+    min-width: 50px;
 }

@@ -1,5 +1,8 @@
 #nav-bar {
     background-color: #ecf4f9;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 #logo-nav-bar {
@@ -13,11 +16,6 @@
 
 .fill-space {
     flex: 1 1 auto;
-}
-
-#nav-bar {
-    position: sticky;
-    top: 0;
 }
 
 .nav-menu {
