@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
 import { ListsComponent } from './lists/lists.component';
 import { LoginComponent } from './login/login.component';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTableModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -18,6 +19,8 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { PeopleComponent } from './people/people.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 const appRoutes = [
   { path: '', component: LoginComponent },
@@ -35,11 +38,14 @@ const appRoutes = [
     NavBarComponent,
     NotificationsComponent,
     PeopleComponent,
+    DeleteDialogComponent,
+    EditDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatDialogModule,
     MatSliderModule,
     MatToolbarModule,
     MatIconModule,

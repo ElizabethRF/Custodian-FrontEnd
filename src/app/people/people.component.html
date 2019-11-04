@@ -25,10 +25,10 @@
         <p class="phone">{{element.phone}}</p>
         <div class="more">
           <button mat-icon-button>
-            <mat-icon class="edit">edit</mat-icon>
+            <mat-icon class="edit" (click)="openEdit()">edit</mat-icon>
           </button>
           <button mat-icon-button>
-            <mat-icon class="delete">delete_outline</mat-icon>
+            <mat-icon class="delete" (click)="openDelete()">delete_outline</mat-icon>
           </button>
         </div>
       </td>

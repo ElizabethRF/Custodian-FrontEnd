@@ -53,3 +53,7 @@ tr:hover {
 .mat-column-email {
   min-width: 50px;
 }
+#edit-dialog {
+  margin-left: 90%;
+  width: 100px;
+}
