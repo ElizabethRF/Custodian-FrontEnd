@@ -81,5 +81,4 @@ export class EditDialog {
   onNoClick(): void {
     this.dialogRef.close();
   }
-
 }

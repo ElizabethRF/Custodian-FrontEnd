@@ -1,26 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-export interface PeriodicElement {
+export interface NotificationElement {
+  id: number;
+  information: string;
   date: string;
   hour: string;
-  camera: number;
-  list: string;
-  personId: number;
-  comment: string;
-  handled: boolean;
+  image: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {date: '2019-10-11', hour: '10:00:00', camera: 10, list: 'White List', personId: 1, comment: "sos", handled:false},
-  {date: '2019-10-11', hour: '10:00:00', camera: 13, list: 'Black List', personId: 2, comment: "sos", handled:true},
-  {date: '2019-10-11', hour: '10:00:00', camera: 15, list: 'White List', personId: 3, comment: "sos", handled:false},
-  {date: '2019-10-11', hour: '10:00:00', camera: 17, list: 'Black List', personId: 4, comment: "sos", handled:true},
-  {date: '2019-10-11', hour: '10:00:00', camera: 18, list: 'White List', personId: 5, comment: "sos", handled:false},
-  {date: '2019-10-11', hour: '10:00:00', camera: 19, list: 'White List', personId: 6, comment: "sos", handled:false},
-  {date: '2019-10-11', hour: '10:00:00', camera: 31, list: 'Black List', personId: 7, comment: "sos", handled:true},
-  {date: '2019-10-11', hour: '10:00:00', camera: 78, list: 'White List', personId: 8, comment: "sos", handled:false},
-  {date: '2019-10-11', hour: '10:00:00', camera: 23, list: 'Black List', personId: 9, comment: "sos", handled:false},
-  {date: '2019-10-11', hour: '10:00:00', camera: 24, list: 'White List', personId: 10, comment: "sos", handled:false},
+export interface DialogData {
+  animal: string;
+  name: string;
+}
+
+const ELEMENT_DATA: NotificationElement[] = [
+  {id: 1, information: '3 people in camera', date: '2019-10-11', hour: '10:00:00', image: 'https://www.google.com/'},
+  {id: 2, information: '5 people in camera', date: '2019-10-11', hour: '11:00:00', image: 'https://www.google.com/'},
+  {id: 3, information: '4 people in camera', date: '2019-10-11', hour: '13:00:00', image: 'https://www.google.com/'},
+  {id: 4, information: '2 people in camera', date: '2019-10-11', hour: '14:00:00', image: 'https://www.google.com/'},
+  {id: 5, information: '8 people in camera', date: '2019-10-11', hour: '15:00:00', image: 'https://www.google.com/'},
+  {id: 6, information: '9 people in camera', date: '2019-10-11', hour: '15:00:00', image: 'https://www.google.com/'},
+  {id: 7, information: '6 people in camera', date: '2019-10-11', hour: '16:00:00', image: 'https://www.google.com/'},
+  {id: 8, information: '8 people in camera', date: '2019-10-11', hour: '16:00:00', image: 'https://www.google.com/'},
+  {id: 9, information: '9 people in camera', date: '2019-10-11', hour: '17:00:00', image: 'https://www.google.com/'},
+  {id: 10, information: '13 people in camera', date: '2019-10-11', hour: '19:00:00', image: 'https://www.google.com/'},
 ];
 
 @Component({
@@ -30,12 +35,39 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class NotificationsComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['id', 'information', 'date', 'hour', 'image'];
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  animal: string;
+  name: string;
+
+  constructor(public dialog: MatDialog) { }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  openDelete(): void {
+    const dialogDelete = this.dialog.open(EditDialog, {
+      width: '250px',
+      data: { name: this.name, animal: this.animal }
+    });
+  }
 
   ngOnInit() {
   }
+}
 
-  displayedColumns: string[] = ['date', 'hour','personId','comment','handled'];
-  dataSource = ELEMENT_DATA;
+@Component({
+  selector: 'edit-dialog',
+  templateUrl: 'edit-dialog.html',
+})
+export class EditDialog {
 
+  constructor(
+    public dialogRef: MatDialogRef<EditDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 }

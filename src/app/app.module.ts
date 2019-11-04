@@ -19,8 +19,6 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { PeopleComponent } from './people/people.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
-import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 const appRoutes = [
   { path: '', component: LoginComponent },
@@ -38,8 +36,6 @@ const appRoutes = [
     NavBarComponent,
     NotificationsComponent,
     PeopleComponent,
-    DeleteDialogComponent,
-    EditDialogComponent,
   ],
   imports: [
     BrowserModule,

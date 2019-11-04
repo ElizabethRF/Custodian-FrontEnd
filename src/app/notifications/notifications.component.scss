@@ -1,12 +1,58 @@
-table {
-    width: 70%;
-    position: absolute;
-  }
+#notifications-comp {
+  width: 100%;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  min-block-size: 70%;
+  display: block;
+  position: relative;
+  z-index: 1;
 
-.redRow{
-  background-color: red; 
+  table {
+    margin-left: 12%;
+    width: 70%;
+  }
 }
 
-.greenRow{
-  background-color: greenyellow; 
+.filter {
+  left: 70%;
+  margin-top: 0.3%;
+  width: 20%;
+}
+
+.image-link {
+  display: inline;
+}
+
+.more {
+  display: inline;
+  visibility: hidden;
+  margin-left: 55%;
+}
+
+td:hover .more {
+  visibility: visible;
+}
+
+tr:hover {
+  background-color: #ecf4f9;
+}
+
+.mat-column-information {
+  max-width: 100px;
+}
+
+.mat-column-date, .mat-column-hour {
+  max-width: 50px;
+}
+
+.mat-column-image {
+  max-width: 50px;
+}
+
+th {
+  font-size: 1.4em;
+}
+
+td {
+  font-size: 1.1em;
 }

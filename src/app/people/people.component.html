@@ -2,7 +2,7 @@
 <div id="people-comp">
   <mat-form-field class="filter">
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-    <mat-icon id="help-footer" matSuffix>filter_list</mat-icon>
+    <mat-icon matSuffix>filter_list</mat-icon>
   </mat-form-field>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
     <ng-container matColumnDef="avatar">
